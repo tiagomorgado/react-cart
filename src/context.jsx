@@ -9,7 +9,7 @@ const AppContext = createContext()
 
 const initialState = {
     loading: false,
-    cart:new Map(cartItems.map((item) => [item.id, item])),
+    cart:new Map(),
 }
 
 export const AppProvider = ({children}) => {
@@ -38,7 +38,6 @@ export const AppProvider = ({children}) => {
         const cart = await response.json()
         dispatch({type:DISPLAY_ITEMS, payload:{cart}})
         console.log(cart);
-        dispatch({type:LOADING, payload:'false'})
     }
 
     useEffect(() => {

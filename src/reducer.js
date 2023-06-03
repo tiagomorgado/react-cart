@@ -38,7 +38,9 @@ const reducer = (state, action) => {
     }
 
     if(action.type === DISPLAY_ITEMS) {
-        return {...state, loading:true}
+        const updatedCart = new Map(action.payload.cart.map((item) => [item.id, item]))
+
+        return {...state, loading:false, cart:updatedCart}
     }
     
     throw new Error (`no matching action type: ${action.type}`)
