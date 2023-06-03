@@ -32,6 +32,14 @@ const reducer = (state, action) => {
         }
         return {...state, cart:updatedCart}
     }
+
+    if(action.type === LOADING) {
+        return {...state, loading:true}
+    }
+
+    if(action.type === DISPLAY_ITEMS) {
+        return {...state, loading:true}
+    }
     
     throw new Error (`no matching action type: ${action.type}`)
 }
