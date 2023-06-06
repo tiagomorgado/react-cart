@@ -43,7 +43,7 @@ const reducer = (state, action) => {
         return {...state, loading:false, cart:updatedCart}
     }
     
-    throw new Error (`no matching action type: ${action.type}`)
+    throw new Error (`No matching action for the type: ${action.type}`)
 }
 
 export default reducer

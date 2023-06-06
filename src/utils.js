@@ -10,4 +10,3 @@ export const getTotals = (cart) => {
 
     return {totalAmount, totalCost}
 }
-
